@@ -81,8 +81,7 @@ function! fpabs#_PathAbs(...)
                         break
                     endif
                 endfor
-                echo 
-                let ret = ret.line[1].line[2].line[3].prefix.split('/'.join(orgary, '/').'/'.join(calary, '/'), root)[0].line[5]
+                let ret = ret.line[1].line[2].line[3].prefix.'/'.split('/'.join(orgary, '/').'/'.join(calary, '/'), root)[0].line[5]
                 let base = line[6]
             else
                 let ret = ret.base
@@ -104,7 +103,6 @@ function! fpabs#_PathAbs(...)
                         break
                     endif
                 endfor
-                echo 
                 let ret = ret.line[1].line[2].line[3].prefix.split('/'.join(orgary, '/').'/'.join(calary, '/'), root)[0].line[5]
                 let base = line[6]
             else

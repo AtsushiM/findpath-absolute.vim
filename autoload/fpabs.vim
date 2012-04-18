@@ -3,6 +3,9 @@
 "VERSION:  0.9
 "LICENSE:  MIT
 
+let s:save_cpo = &cpo
+set cpo&vim
+
 function! fpabs#_linetypecheck()
     let line = getline('.')
     let ret = ''
@@ -116,3 +119,5 @@ function! fpabs#_PathAbs(...)
         call setline('.', ret)
     endif
 endfunction
+
+let &cpo = s:save_cpo
